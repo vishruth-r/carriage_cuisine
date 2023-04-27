@@ -223,9 +223,12 @@ class _SignupPageState extends State<SignupPage> {
     });
 
   if (response.statusCode==200) {
-      SharedPreferences localStorage =
+    print(response);
+      SharedPreferences prefs =
       await SharedPreferences.getInstance();
-      localStorage.setString('token', json.encode(data['token']));
+      prefs.setString('token', json.encode(data['token']),
+      );
+      print(prefs);
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => HomePage()),

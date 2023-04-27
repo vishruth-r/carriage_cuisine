@@ -144,32 +144,39 @@ class HomePage extends StatelessWidget {
               ],
           ),
         ),
-    bottomNavigationBar: Container(
-    padding: EdgeInsets.only(bottom: 20),
-    decoration: BoxDecoration(
-    color: Colors.green,
-    ),
-    child: BottomNavigationBar(
-    items: [
-    BottomNavigationBarItem(
-    icon: Icon(Icons.home),
-    label: 'Home',
-    ),
-    BottomNavigationBarItem(
-    icon: Icon(Icons.search),
-    label: 'Search',
-    ),
-    BottomNavigationBarItem(
-    icon: Icon(Icons.fastfood),
-    label: 'Food',
-    ),
-    ],
-    selectedItemColor: Colors.green,
-    ),),    );
+      bottomNavigationBar: Container(
+        padding: EdgeInsets.only(bottom: 20),
+        decoration: BoxDecoration(
+          color: Colors.green,
+        ),
+        child: BottomNavigationBar(
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.search),
+              label: 'Search',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.fastfood),
+              label: 'Food',
+            ),
+          ],
+          selectedItemColor: Colors.green,
+          onTap: (index) {
+            // Do something when a tab is tapped
+            if (index == 2) {
+              Navigator.pushNamed(context, '/food');
+            }
+          },
+        ),
+      ),
+      );
 
   }
 }
-
 
 
 
